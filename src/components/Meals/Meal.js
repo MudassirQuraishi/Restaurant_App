@@ -4,7 +4,7 @@ const Meals = (props) => {
     return (
         <>
             <div className={classes["meal-container"]}>
-                <div className={classes.meal}>
+                <div id={meal.id} className={classes.meal}>
                     <p className={classes.name}>{meal.name}</p>
                     <p>
                         <i>{meal.description}</i>
@@ -14,7 +14,11 @@ const Meals = (props) => {
                 <div className={classes["input-field"]}>
                     <div>
                         <label htmlFor='amount'>Amount: </label>
-                        <input type='number' placeholder='Enter Quantity' />
+                        <input
+                            id='amount'
+                            type='number'
+                            placeholder='Enter Quantity'
+                        />
                     </div>
                     <button>Add</button>
                 </div>

@@ -3,16 +3,19 @@ import classes from "./MealList.module.css";
 const MealList = () => {
     const Meals = [
         {
+            id: "m1",
             name: "Mugalai Biriyani",
             price: 10.99,
             description: "Finest of the Mughals",
         },
         {
+            id: "m2",
             name: "Mugalai Biriyani",
             price: 10.99,
             description: "Finest of the Mughals",
         },
         {
+            id: "m3",
             name: "Mugalai Biriyani",
             price: 10.99,
             description: "Finest of the Mughals",
@@ -21,7 +24,7 @@ const MealList = () => {
     return (
         <div className={classes["meal-container"]}>
             {Meals.map((meal) => {
-                return <Meal mealData={meal}></Meal>;
+                return <Meal key={meal.id} mealData={meal}></Meal>;
             })}
         </div>
     );
