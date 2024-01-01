@@ -1,9 +1,12 @@
 import logo from "../../images/mainLogo.jpg";
+import classes from "./MainIcon.module.css";
 
 const MainIcon = () => {
     return (
         <>
-            <img src={logo} alt='Food' />
+            <div className={classes["main-image"]}>
+                <img src={logo} alt='Food' />
+            </div>
         </>
     );
 };
