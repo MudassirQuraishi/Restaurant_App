@@ -5,19 +5,25 @@ const MealList = () => {
         {
             id: "m1",
             name: "Mugalai Biriyani",
-            price: 10.99,
+            price: 350,
             description: "Finest of the Mughals",
         },
         {
             id: "m2",
-            name: "Mugalai Biriyani",
-            price: 10.99,
+            name: "Chicken Biriyani",
+            price: 250,
             description: "Finest of the Mughals",
         },
         {
             id: "m3",
-            name: "Mugalai Biriyani",
-            price: 10.99,
+            name: "Sheek Kebab",
+            price: 150,
+            description: "Finest of the Mughals",
+        },
+        {
+            id: "m4",
+            name: "Tangdi Kebab",
+            price: 200,
             description: "Finest of the Mughals",
         },
     ];

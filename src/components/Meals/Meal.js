@@ -1,6 +1,20 @@
+import React, { useRef, useContext } from "react";
+import CartContext from "../../store/cart-context";
 import classes from "./Meal.module.css";
 const Meals = (props) => {
     const meal = props.mealData;
+    const qunatityRef = useRef();
+    const cartCtx = useContext(CartContext);
+    const addItemToCartHandler = () => {
+        const cartItem = {
+            id: meal.id,
+            name: meal.name,
+            price: parseFloat(meal.price),
+            quantity: parseInt(qunatityRef.current.value),
+        };
+        cartCtx.addItem(cartItem);
+        qunatityRef.current.value = "";
+    };
     return (
         <>
             <div className={classes["meal-container"]}>
@@ -15,12 +29,13 @@ const Meals = (props) => {
                     <div>
                         <label htmlFor='amount'>Amount: </label>
                         <input
+                            ref={qunatityRef}
                             id='amount'
                             type='number'
                             placeholder='Enter Quantity'
                         />
                     </div>
-                    <button>Add</button>
+                    <button onClick={addItemToCartHandler}>Add</button>
                 </div>
             </div>
             <hr />
