@@ -5,6 +5,8 @@ const CartContext = createContext({
     totalAmount: 0,
     addItem: () => {},
     deleteItem: () => {},
+    increaseQuantity: () => {},
+    decreaseQuantity: () => {},
 });
 
 export const CartProvider = (props) => {
@@ -26,12 +28,49 @@ export const CartProvider = (props) => {
             return prevAmount + item.price;
         });
     };
+    const increaseQuantityHandler = (updatedItem) => {
+        setCartItems((prevItems) => {
+            const updatedItems = prevItems.map((item) => {
+                if (item.id === updatedItem.id) {
+                    return {
+                        ...item,
+                        quantity: item.quantity + 1,
+                    };
+                }
+                return item;
+            });
+            return updatedItems;
+        });
+        setTotalAmount((prevAmount) => {
+            return prevAmount + updatedItem.price;
+        });
+    };
+
+    const decreaseQuantityHandler = (updatedItem) => {
+        setCartItems((prevItems) => {
+            const updatedItems = prevItems.map((item) => {
+                if (item.id === updatedItem.id) {
+                    return {
+                        ...item,
+                        quantity: item.quantity - 1,
+                    };
+                }
+                return item;
+            });
+            return updatedItems;
+        });
+        setTotalAmount((prevAmount) => {
+            return prevAmount - updatedItem.price;
+        });
+    };
     const removeItemHandler = (id) => {};
     const cartContext = {
         items: cartItems,
         totalAmount: totalAmount,
         addItem: addItemHandler,
         deleteItem: removeItemHandler,
+        increaseQuantity: increaseQuantityHandler,
+        decreaseQuantity: decreaseQuantityHandler,
     };
     return (
         <CartContext.Provider value={cartContext}>

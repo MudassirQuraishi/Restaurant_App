@@ -20,11 +20,14 @@
 
 .cart-item li {
     margin-right: 8px;
+    margin-top: 4px;
 }
 
 .cart-item span {
-    color: #888;
+    color: #000000;
     font-weight: bold;
+    border: 1px solid #4b4949;
+    padding: 4px;
 }
 
 .total {
@@ -64,4 +67,9 @@
 .actions .button {
     background-color: #8a2b06;
     color: white;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: row;
 }

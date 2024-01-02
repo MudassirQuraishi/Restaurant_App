@@ -4,7 +4,9 @@ import CartContext from "../../../store/cart-context";
 import classes from "./HeaderCartButton.module.css";
 const HeaderCartButton = (props) => {
     const cartCtx = useContext(CartContext);
+
     const numberofCartItems = cartCtx.items.length;
+
     const cartStatusHandler = () => {
         props.cartStatusHandler();
     };
